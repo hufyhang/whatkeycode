@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>What Key Code?</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="x-ua-compatible" content="IE=edge">
+  <meta name="author" content="Feifei Hang">
+  <meta name="keywords" content="keycode, javascript keycode, keycode checker, js keycode, charcode, javascript charcode, js charcode, which, which key">
+  <meta name="description" content="Check keycode of each key on your keyboard.">
+  <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.min.css">
+  <link href='//fonts.googleapis.com/css?family=Dosis:300,500' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <h1 class="main-title text-center">What Key Code?</h1>
+      </div>
+
+      <div class="container text-center">
+        <div id="key">Press any key</div>
+        <div id="result"></div>
+      </div>
+
+    </div>
+    <div class="footer fixed-bottom text-center">
+      <div>made by feifei hang</div>
+    </div>
+    <script>
+      'use strict';
+      (function (window, document) {
+        var KEY = {
+         8: 'backspace',
+         9: 'tab',
+         13: 'enter',
+         16: 'shift',
+         17: 'ctrl',
+         18: 'alt',
+         19: 'pause/break',
+         20: 'caps lock',
+         27: 'escape',
+         32: 'whitespace',
+         33: 'page up',
+         34: 'page down',
+         35: 'end',
+         36: 'home',
+         37: 'left arrow',
+         38: 'up arrow',
+         39: 'right arrow',
+         40: 'down arrow',
+         45: 'insert',
+         46: 'delete',
+         91: 'left window',
+         92: 'right window',
+         93: 'select key',
+         96: 'numpad 0',
+         97: 'numpad 1',
+         98: 'numpad 2',
+         99: 'numpad 3',
+         100: 'numpad 4',
+         101: 'numpad 5',
+         102: 'numpad 6',
+         103: 'numpad 7',
+         104: 'numpad 8',
+         105: 'numpad 9',
+         106: 'multiply',
+         107: 'add',
+         109: 'subtract',
+         110: 'decimal point',
+         111: 'divide',
+         112: 'F1',
+         113: 'F2',
+         114: 'F3',
+         115: 'F4',
+         116: 'F5',
+         117: 'F6',
+         118: 'F7',
+         119: 'F8',
+         120: 'F9',
+         121: 'F10',
+         122: 'F11',
+         123: 'F12',
+         144: 'num lock',
+         145: 'scroll lock',
+         186: ';',
+         187: '=',
+         188: ',',
+         189: '-',
+         190: '.',
+         191: '/',
+         192: '`',
+         219: '[',
+         220: '\\',
+         221: ']',
+         222: '\''
+       };
+
+       var preventDefault = function preventDefault(evt) {
+        evt = evt ? evt : window.event;
+        if (evt.preventDefault) {
+          evt.preventDefault();
+        } else {
+          evt.returnValue = false;
+        }
+        return evt;
+      };
+
+      var keyHolder = document.getElementById('key');
+      var result = document.getElementById('result');
+
+      document.onkeydown = function (evt) {
+        preventDefault(evt);
+      };
+
+      document.onkeyup = function (evt) {
+        evt = preventDefault(evt);
+        var code = evt.which ? evt.which : evt.keyCode;
+        keyHolder.innerHTML = String.fromCharCode(code);
+        if (KEY[code] !== undefined) {
+          keyHolder.innerHTML = KEY[code];
+        }
+        result.innerHTML = 'KeyCode: ' + code;
+      };
+
+    })(window, document);
+
+
+    // Google Analystics
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-71750852-1', 'auto');
+    ga('send', 'pageview');
+</script>
+</body>
+</html>
