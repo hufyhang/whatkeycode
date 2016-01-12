@@ -55,7 +55,11 @@ body {
   background: #17191E;
 }
 
-.footer a {
+.footer a,
+.footer a:link,
+.footer a:visited,
+.footer a:hover,
+.footer a:active {
   color: #96998B;
   text-decoration: none;
 }
