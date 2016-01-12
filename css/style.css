@@ -54,3 +54,8 @@ body {
 .footer {
   background: #17191E;
 }
+
+.footer a {
+  color: #96998B;
+  text-decoration: none;
+}
